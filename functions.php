@@ -197,5 +197,11 @@ function genesis_sample_comments_gravatar( $args ) {
 
 	$args['avatar_size'] = 60;
 	return $args;
+}
+
+// Enqueue Custom JS script
+add_action( 'wp_enqueue_scripts', 'enqueue_custom_script' );
+function enqueue_custom_script() {
+    wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ),  '1.0.0', true );
 
 }
